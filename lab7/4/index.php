@@ -75,22 +75,22 @@
                     <input type="number" class="form-control" placeholder="ID card" name="id" value="1759900384697">
                 </div>
             </div>
-            <button type="submit" class="btn btn-info">submit</button>
+            <button type="submit" class="btn btn-info">Submit</button>
         </form>
         <br>
         <br>
 
         <table class="table">
-            <thead class="thead-light">
+            <thead class="thead">
                 <tr>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Adress</th>
-                    <th scope="col">District</th>
-                    <th scope="col">Province</th>
-                    <th scope="col">Zip Code</th>
-                    <th scope="col">Phone number</th>
-                    <th scope="col">ID card</th>
+                    <th class="table-info" scope="col">First</th>
+                    <th class="table-info" scope="col">Last</th>
+                    <th class="table-info" scope="col">Adress</th>
+                    <th class="table-info" scope="col">District</th>
+                    <th class="table-info" scope="col">Province</th>
+                    <th class="table-info" scope="col">Zip Code</th>
+                    <th class="table-info" scope="col">Phone number</th>
+                    <th class="table-info" scope="col">ID card</th>
                 </tr>
             </thead>
             <tbody>
