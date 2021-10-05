@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 3.3</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        font-family: 'Prompt', sans-serif;
+      }
+      img{
+        margin: 5px;
+      }
+      .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          min-height: calc(100vh - 20px);
+          padding: 15px;
+      }
+      img{
+        width: 150px;
+        
+      }
+      button{
+        margin: 50px;
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+      <div class='container'>
+          <div class="row justify-content-center">
+                <img src="http://10.0.15.20/lab3/images/1.png" alt="1" id="position1">
+                <img src="http://10.0.15.20/lab3/images/2.png" alt="2" id="position2">
+          </div>
+          <div class="row justify-content-center">
+                <img src="http://10.0.15.20/lab3/images/3.png" alt="3" id="position3">
+                <img src="http://10.0.15.20/lab3/images/4.png" alt="4" id="position4">
+          </div>
+        <div class="row justify-content-center">
+          <button type="button" class="btn btn-info" onclick="rotate()">SWAP</button>
+        </div>
+        </div>
+      </div>
+      <script>
+        function rotate() {
+        var position1 = document.getElementById('position1').src;
+        var position2 = document.getElementById('position2').src;
+        var position3 = document.getElementById('position3').src;
+        var position4 = document.getElementById('position4').src;
+        document.getElementById('position1').src = position3;
+        document.getElementById('position2').src = position1;
+        document.getElementById('position3').src = position4;
+        document.getElementById('position4').src = position2;
+      }
+      </script>
+  </body>
+</html>

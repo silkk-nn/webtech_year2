@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab4.6</title>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+      body {
+          font-size: calc(60% + 0.8vmin);
+          font-family: 'Prompt', sans-serif;
+      }
+  </style>
+</head>
+<body>
+  <div class="con text-center my-5" style="color: darkorange">
+    <h1><b>Question ?</b></h1>
+  </div>
+  <div class="container">
+    <div class="name my-4">
+      <h2>What's your name ?</h2>
+      <button type="button" 
+      class="btn btn-outline-primary" onclick="reply('reply_name')">Reply</button>
+      <div class="mt-3">
+        <p id="reply_name"></p>
+      </div>
+    </div>
+    <div class="age my-4">
+      <h2>How old are you ?</h2>
+      <button type="button" 
+      class="btn btn-outline-primary" onclick="reply('reply_age')">Reply</button>
+      <div class="mt-3">
+        <p id="reply_age"></p>
+      </div>
+    </div>
+    <div class="hobby my-4">
+      <h2>What's your favorite hobby? ?</h2>
+      <button type="button" 
+      class="btn btn-outline-primary" onclick="reply('reply_hooby')">Reply</button>
+      <div class="mt-3">
+        <p id="reply_hooby"></p>
+      </div>
+    </div>
+  </div>
+  <div id="form"></div>
+  <script>
+    function reply(element) {
+      form.innerHTML = `
+      <div class="container text-center mt-5">
+        <div class="input-group mb-3" >
+          <input class="form-control" id="reply_value" type="text" placeholder="Reply Question">
+          <button class="btn btn-info text-white" type="button" onclick="sendReply(${element})">Reply</button>
+        </div>
+      </div>
+      `;
+    }
+    function sendReply(element) {
+      element.innerText = reply_value.value;
+      form.innerHTML = "";
+    }
+  </script>
+<body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lab 4.5</title>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+      body {
+        font-size: calc(60% + 0.8vmin);
+        font-family: 'Prompt', sans-serif;
+      }
+      .header {
+        /* background-color; */
+        font-weight: bolder;
+        color: #3EB489;
+        margin-bottom: 20px;
+      }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="container-fluid text-center bg-light">
+      <p><br></p>
+      <h1><b>MINT RESTURANT</b></h1>
+      <h4>"If you love mint, Mint will love you"</h4>
+      <p><br></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="card mb-3" style="max-width: 640px;">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="mint1.jpeg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 id='menu1' class="card-title">Mint Chocolate Ice Cream</h5>
+                <p class="card-text" style="font-size: 18px;">ไอศครีม รสมิ้นต์ช็อกโกแลต สูตรเด็ดจากทางร้าน สดชื่นรสมิ้นต์ผสมผสานกับความเข้มข้นของช็อกโกแลต</p>
+                <button type="button" class="btn btn-warning" onclick="add1()"><b>ADD TO CART</b></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 640px;">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="mint2.jpeg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 id='menu2' class="card-title">Mint Chocolate Bar</h5>
+                <p class="card-text" style="font-size: 18px;">ขนมหนึบ ผสมผสานความเข้นข้นของช็อกโกแลตที่จาก แบลเยี่ยม และเติมความสดชื่นด้วยมิ้นต์ ความเข้ากันอย่างลงตัวรับรองโดนใจสายมิ้นต์แน่นอน</p>
+                <button type="button" class="btn btn-warning" onclick="add2()"><b>ADD TO CART</b></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 640px;">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img src="mint3.jpeg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 id='menu3' class="card-title">Mint Chicken Fried</h5>
+                <p class="card-text" style="font-size: 18px;">ความแปลกใหม่ที่เข้ากินได้ดีอย่างลงตัว ไก่ทอดเคลือบซอสรสมิ้นต์สูตรเข้มข้นจากทานร้านรับรอง ความอร่อยและ ลูกค้าต้องติดใจอย่างแน่นอน</p>
+                <button type="button" class="btn btn-warning" onclick="add3()"><b>ADD TO CART</b></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <ul class="list-group"id='order'>
+          <li  class="list-group-item" style="background-color: #3EB489; color: white; font-size: 20px; font-weight: bold;" aria-current="true">Order List</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    function add1(){
+        let mdiv = document.getElementById("order");
+        let dv = document.createElement("li");
+        let cls = document.createAttribute("class");
+        let style = document.createAttribute("style");
+        let name =document.getElementById('menu1').textContent;
+        cls.value = "list-group-item";
+        style.value = "background-color: #defff3b2;";
+        dv.setAttributeNode(style);
+        dv.setAttributeNode(cls);
+        dv.innerHTML = name + " x1";
+        mdiv.appendChild(dv);
+    }
+    function add2(){
+        let mdiv = document.getElementById("order");
+        let dv = document.createElement("li");
+        let cls = document.createAttribute("class");
+        let style = document.createAttribute("style");
+        cls.value = "list-group-item";
+        style.value = "background-color: #defff3b2;";
+        dv.setAttributeNode(style);
+        dv.setAttributeNode(cls);
+        dv.innerHTML = document.getElementById('menu2').textContent + " x1";
+        mdiv.appendChild(dv);
+    }
+    function add3(){
+        let mdiv = document.getElementById("order");
+        let dv = document.createElement("li");
+        let cls = document.createAttribute("class");
+        let style = document.createAttribute("style");
+        cls.value = "list-group-item";
+        style.value = "background-color: #defff3b2;";
+        dv.setAttributeNode(style);
+        dv.setAttributeNode(cls);
+        dv.innerHTML = document.getElementById('menu3').textContent + ' x1';
+        mdiv.appendChild(dv);
+    }
+</script>
+<body>
+</html>

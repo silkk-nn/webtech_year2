@@ -1,0 +1,21 @@
+[
+    {
+        "InvoiceID": 123,
+        "CreateDate":{"year": 2015, "month": "January", "day":1},
+        "Due":{"year": 2015, "month": "February", "day":1},
+        "Company": "SPARKSUITE",
+        "Adress": "SPARKSUITE, Inc. 12345 Sunny Roads Sunnyville, TX 12345",
+        "Payment": [
+            {
+            "Method": "Check",
+            "CheckID": 1000
+            }
+        ],
+        "Item": [
+            {"itemname": "Web Design", "Price": 300.00},
+            {"itemname": "Hosting(3 month)", "Price": 75.00},
+            {"itemname": "Domainname (1 year)", "Price": 10.00}
+        ],
+        "TotalPrice": 385.00
+    }
+]

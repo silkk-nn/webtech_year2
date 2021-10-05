@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile</title>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+      body {
+          font-size: calc(60% + 0.8vmin);
+          font-family: 'Prompt', sans-serif;
+      }
+
+  </style>
+</head>
+<body>
+  <form>
+    <div class="contianer text-center mt-5">
+      <div>
+        <label for="fnum">Value 1 :</label>
+        <input type="number" id="fnum" name="fnum">
+        </div>
+        <div>
+        <label for="snum">Value 2 :</label>
+        <input type="number" id="snum" name="snum">
+        </div>
+        <input class="my-3" type="button" value="Calculate" onclick="cal()">
+        <div id="res">
+        <label id="result">Result :</label>
+      </div>
+    </div>
+  </form>
+<script>
+  function addNode(i1, i2, result) {
+      var bbr = document.createElement("br");
+      var ptag = document.createElement("label");
+      var np = i1 +" + "+ i2 +" = "+ result;
+      var txt = document.createTextNode(np);
+      ptag.appendChild(txt);
+      var parent1 = document.getElementById("res");
+      parent1.appendChild(bbr); 
+      parent1.appendChild(ptag); 
+
+  }
+  function cal(){
+      var i1 = document.getElementById("fnum").value;
+      var i2 = document.getElementById("snum").value;
+      var result = Number(i1)+Number(i2);
+      document.getElementById("result").innerHTML = "Result : "+result;
+      addNode(Number(i1), Number(i2), result);
+  }
+</script>
+<body>
+</html>

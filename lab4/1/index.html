@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            body{
+                width: auto;
+                height: auto;
+                display:flex;
+                padding: 20px;
+
+            }
+            div{
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <div>
+            <label for="fnum">Value 1 :</label>
+            <input type="number" id="fnum" name="fnum">
+            </div>
+            <div>
+            <label for="snum">Value 2 :</label>
+            <input type="number" id="snum" name="snum">
+            </div>
+            <input type="button" value="Calculate" onclick="cal()">
+            <div>
+            <label id="result">Result :</label>
+            </div>
+          </form>
+    <script>
+        function cal(){
+            var i1 = document.getElementById("fnum").value;
+            var i2 = document.getElementById("snum").value;
+            var result = Number(i1)+Number(i2);
+            document.getElementById("result").innerHTML = "Result : "+result;
+        }
+    </script>
+    </body>
+</html>

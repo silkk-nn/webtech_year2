@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5.2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      .person {
+        padding: 15px 20px;
+        max-width: 360px;
+        margin: 100px auto;
+        border-radius: 10px;
+        border: 1px solid rgb(211, 211, 211);
+        background-color: rgb(230, 219, 205);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="person" id="person">
+
+    </div>
+    <script>
+      let requestURL = 'person.json';
+      let request = new XMLHttpRequest();
+      request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == 200) {
+              dataReportStatus(JSON.parse(request.responseText));
+          }
+      };
+      request.open("GET", requestURL, true);
+      request.send();
+      function createElementFromHTML(htmlString) {
+          var div = document.createElement('div');
+          div.innerHTML = htmlString.trim();
+
+          // Change this to div.childNodes to support multiple top-level nodes
+          return div.firstChild;
+      }
+      function dataReportStatus(data) {
+          for (var i=0; i<data.length; i++){
+              var html = createElementFromHTML(
+                `<div class="card" style="width: 21rem;">
+                    <div class="card-body">
+                      <h2 class="card-title">${data[i].firstName} ${data[i].lastName}, ${data[i].gender.type} ${data[i].age} year old</h2>
+                      <p class="card-text">${data[i].address.streetAddress} ${data[i].address.city} ${data[i].address.state}</p>
+                      <p class="card-text">${data[i].address.postalCode}</p>
+                      <p class="card-text">${data[i].phoneNumber[0].type} : ${data[i].phoneNumber[0].number}</p>
+                      <p class="card-text">${data[i].phoneNumber[1].type} : ${data[i].phoneNumber[1].number}</p>
+                  </div>`);
+              document.getElementById("person").appendChild(html);
+                                          }
+      }
+    </script>
+  </body>
+</html>

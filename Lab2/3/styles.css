@@ -1,0 +1,28 @@
+body{
+    font-family: 'Nunito', sans-serif;
+}
+.logo{
+    width: 200px;
+}
+.container {
+    display: flex;
+    min-height: calc(70vh - 100px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+.menu{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+a{
+    font-size: 18pt;
+    color: deeppink;
+    padding: 15px;
+}
+h1{
+    font-size: 28pt;
+    color: blue;
+    font-weight: bolder;
+}

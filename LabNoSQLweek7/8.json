@@ -1,0 +1,14 @@
+[
+    {
+        "InvoiceID": 123,
+        "Date":{"year": 2016, "month": 10, "day":18},
+        "Company": "Falconwiz, Inc",
+        "Adress": "12345 Bird Road Internet, On, Canada L1C 4S5",
+        "Payment": [{"Method": "Credit"}],
+        "Item": {
+            "itemname": "Video Games",
+            "Price": 59.99
+        },
+        "TotalPrice": 59.99
+    }
+]

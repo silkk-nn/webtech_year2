@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5.2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      
+      .card-title {
+        color: rgba(14, 182, 42, 0.973);
+      }
+      body {
+        background-color: rgb(255, 255, 255);
+      }
+      .card {
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 5px 5px 10px 0px rgba(71, 70, 70, 0.281);
+        margin: 10px 20px 10px 20px;
+      }
+      .card-text {
+        color: rgb(73, 73, 73);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid py-3 px-5" style="background-color: rgb(15, 116, 15);">
+      <h1 style="color:rgb(245, 245, 245)">Music Hub</h1>
+    </div>
+    <h2 class="m-5">Recently Song</h2>
+    <div class="contianer d-flex flex-wrap justify-content-center" id="content">
+      </div>
+    </div>
+    
+    <script>
+      let requestURL = 'music.json';
+      let request = new XMLHttpRequest();
+      request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == 200) {
+              dataReportStatus(JSON.parse(request.responseText));
+          }
+      };
+      request.open("GET", requestURL, true);
+      request.send();
+      function createElementFromHTML(htmlString) {
+          var div = document.createElement('div');
+          div.innerHTML = htmlString.trim();
+
+          // Change this to div.childNodes to support multiple top-level nodes
+          return div.firstChild;
+      }
+      function dataReportStatus(data) {
+          for (var i=0; i<data.length; i++){
+              var html = createElementFromHTML(
+                `<div class="card" style="width: 15rem;">
+                    <img src="${data[i].image}" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">${data[i].song}</h5>
+                      <p class="card-text">${data[i].artist}</p>
+                    </div>
+                  </div>`);
+              document.getElementById("content").appendChild(html);
+                                          }
+      }
+    </script> 
+  </body>
+</html>

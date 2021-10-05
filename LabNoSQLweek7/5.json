@@ -1,0 +1,16 @@
+[
+    {
+        "billID": 1,
+        "Coutry": {"CountryID": 1, "CName":"Thailand"},
+        "YearID": {"yearID": 1, "Year":"1990"},
+        "Customer": {"CustID": "1","CustName": "Sara"},
+        "Amount": 350
+    },
+    {
+        "billID": 2,
+        "Coutry": {"CountryID": 2, "CName":"Japan"},
+        "YearID": {"yearID": 2, "Year":"2000"},
+        "Customer": {"CustID": "2", "CustName": "Alex"},
+        "Amount": 350
+    }
+]

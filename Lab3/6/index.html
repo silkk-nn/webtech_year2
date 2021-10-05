@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 3.3</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+        }
+        .window {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            min-height: 100vh;
+            background-color: rgb(255, 245, 198);
+        }
+        .bodyinput {
+            width: 40%;
+            background-color: rgb(255, 255, 255);
+        }
+        .inputcard {
+            max-width: 400px;
+            padding: 15px;
+            margin: 150px auto;
+        }
+        .cardbody {
+            width: 60%;
+            padding: 100px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .cardgen {
+            width: 90%;
+            height: 60%;
+            background-image: url("bg.jpg");
+            background-size: 150% 100%;
+        }
+        .detail{
+            margin: 30px;
+            padding: 20px;
+        }
+    </style>
+</head>
+    <body>
+        <div class='window'>
+            <div class='bodyinput'>
+                <div class="inputcard">
+                    <form id="generatorForm" onsubmit="previewCard()">
+                        <h1 style="margin-bottom: 50px;">Create Your Card</h1>
+                        <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="fullName"
+                            id="fullName"
+                            placeholder="Full Name"
+                            required
+                        />
+                        </div>
+                        <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input
+                            type="tel"
+                            class="form-control"
+                            name="phone"
+                            id="phone"
+                            placeholder="Phone"
+                            required
+                        />
+                        </div>
+                        <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                            required
+                        />
+                        </div>
+                        <div class="form-group">
+                        <label for="company">Company</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="company"
+                            id="company"
+                            placeholder="Company"
+                            required
+                        />
+                        </div>
+                        <button type="submit" class="btn btn-green btn-block mt-4" style="background: rgba(243, 210, 64, 0.993);">
+                        Create
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class='cardbody'>
+                <div class='cardgen', style="text-align: right;">
+                    <div class='detail'>
+                        <h1 id="cardfullName"
+                        style="border-bottom:3px solid rgb(172, 167, 161) ;
+                        padding-bottom: 20px;">your name</h2>
+                        <h3 id="cardphone">phone number</h3>
+                        <h3 id="cardemail">email</h3>
+                        <h3 id="cardcompany">company</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function previewCard() {
+              event.preventDefault();
+              let fullName = document.forms['generatorForm']['fullName'].value;
+              let phone = document.forms['generatorForm']['phone'].value;
+              let email = document.forms['generatorForm']['email'].value;
+              let company = document.forms['generatorForm']['company'].value;
+              document.getElementById('cardfullName').innerText = fullName;
+              document.getElementById('cardphone').innerText = phone;
+              document.getElementById('cardemail').innerText = email;
+              document.getElementById('cardcompany').innerText = company;
+            }
+          </script>
+    </body>
+</html>

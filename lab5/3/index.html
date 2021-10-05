@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5.4</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container mx-5 my-3"><h1>Quiz 1</h1></div>
+    <div class="contianer mx-5 my-3">
+      <br>
+      <div id="main"></div>
+
+    </div>
+    <div id="demo"></div>
+    <script>
+      var array_ans = []
+      let requestURL = 'questionAnswerData.json';
+      let request = new XMLHttpRequest();
+      request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == 200) {
+              collect_ans = dataReportStatus(JSON.parse(request.responseText));
+              console.log(collect_ans);
+          }
+      };
+      request.open("GET", requestURL, true);
+      request.send();
+      function createElementFromHTML(htmlString) {
+          var div = document.createElement('div');
+          div.innerHTML = htmlString.trim();
+          // Change this to div.childNodes to support multiple top-level nodes
+          return div.firstChild;
+      }
+      function dataReportStatus(data) {
+          for (var i=0; i<data.length; i++){
+            console.log(data[i].answers.a)
+            var correct_ans = data[i].answers.correct;
+            array_ans.push(correct_ans);
+            console.log(correct_ans);
+              var html = createElementFromHTML(
+              `<div class="problem">
+                  <h5>${1+i}. ${data[i].question}</h5>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="prob${i}" id="a${i}" ${(array_ans[i] == "a" ? "checked" : " ")}>
+                    <label class="form-check-label" for="prob${i}">
+                      ${data[i].answers.a}
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio"  name="prob${i}" id="b${i}" ${(array_ans[i] == "b" ? "checked" : " ")}>
+                    <label class="form-check-label" for="prob${i}">
+                      ${data[i].answers.b}
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="prob${i}" id="c${i}" ${(array_ans[i] == "c" ? "checked" : " ")}>
+                    <label class="form-check-label" for="prob${i}">
+                      ${data[i].answers.c}
+                    </label>
+                  </div>
+                </div>`);
+              id_correct = array_ans[i]+i
+              document.getElementById("main").appendChild(html);
+            }
+            return array_ans;
+                                          
+
+      }
+    </script> 
+  </body>
+</html>

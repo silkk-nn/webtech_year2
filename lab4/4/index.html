@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile</title>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+      body {
+          font-size: calc(60% + 0.8vmin);
+          font-family: 'Prompt', sans-serif;
+          display: flex;
+          margin: 0;
+          justify-content: center;
+          align-items: center;
+      }
+  </style>
+</head>
+<body>
+  <div class="container my-5" id="container">
+    <div id="top">
+        <input type="number" id="val" max="64">
+        <input type="button" value="create" onclick="chesstable()">
+    </div>
+</div>
+<script>
+    function chesstable() {
+        if (document.getElementById("val").value <= 64) {
+            if (document.getElementById("table") == null) {
+                createTable();
+            }
+            else {
+                var del = document.getElementById("table");
+                del.remove();
+                createTable();
+            }
+        }
+        else {
+            if (document.getElementById("table") == null) {
+                createTable();
+            }
+            else {
+                var del = document.getElementById("table");
+                del.remove();
+                createTable();
+            }
+        }
+
+
+    }
+    function createTable() {
+        var val = document.getElementById("val").value;
+        var dvv = document.createElement("div");
+        dvv.style.padding = "20px";
+        var tbl = document.createElement("table");
+        let x = document.createAttribute("id");
+        x.value = "table";
+        dvv.setAttributeNode(x);
+        dvv.appendChild(tbl);
+        var fdiv = document.getElementById("container");
+        fdiv.appendChild(dvv);
+        console.log(Math.floor(val / 8));
+        console.log(val % 8);
+        if (val > 64){
+            val = 64;
+        }
+        for (let j = 1; j <= Math.floor(val / 8); j++) {
+            let row = tbl.insertRow(-1);
+            let cell;
+            for (let i = 1; i <= 8; i++) {
+                cell = row.insertCell(-1);
+                cell.style.width = "30px";
+                cell.style.height = "30px";
+                cell.style.padding = "15px";
+                cell.style.border = "1px solid black";
+                cell.style.borderCollapse = "collapse";
+                if ((i + j) % 2 == 1) {
+                    cell.style.backgroundColor = "black";
+                }
+                else {
+                    cell.style.backgroundColor = "white";
+                }
+            }
+        }
+        row = tbl.insertRow(-1);
+        for (let l = 1; l <= val % 8; l++) {
+            cell = row.insertCell(-1);
+            cell.style.width = "30px";
+            cell.style.height = "30px";
+            cell.style.padding = "15px";
+            cell.style.border = "1px solid black";
+            cell.style.borderCollapse = "collapse";
+            if ((Math.floor(val / 8) + 1 + l) % 2 == 1) {
+                cell.style.backgroundColor = "black";
+            }
+            else {
+                cell.style.backgroundColor = "white";
+            }
+        }
+        tbl.style.borderCollapse = "collapse";
+    }
+</script>
+<body>
+</html>

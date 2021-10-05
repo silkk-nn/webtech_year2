@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 3.3</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            /* background-image: url('star-bg.jpg'); */
+        }
+        .container {
+            margin-top: 70px;
+        }
+        .header {
+            padding: 30px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background-color: rgba(90, 90, 90, 0.644);
+        }
+        .prize {
+            margin-bottom: 20px;
+            /* background-color: rgba(252, 190, 76, 0.705); */
+            width: auto;
+            color: rgb(0, 0, 0);
+            font-style: bold;
+        }
+
+    </style>
+</head>
+    <body>
+       <div>
+            <div class='header'>
+                <h1>ผลรางวัลฉลากกินแบ่งรัฐบาล</h1>
+                <h2>งวดประจำวันที่ 1 กันยายน 2564</h2>
+            </div>
+            <div class="row" style="background-color: rgb(236, 236, 236);">
+                <div class="col-12 text-center mt-5">
+                    <h2 class='prize'>รางวัลที่ 1</h2>
+                    <h3 id='firstprize'>247511</h3>
+                </div>
+                <div class="col-6 text-center">
+                    <div class="col-12 text-center my-5">
+                        <h3 class='prize'>รางวัลเลขหน้า 3 ตัว</h3>
+                        <h3 id='prizefirst3place'>247</h3>
+                    </div>
+                    <div class="col-12 text-center my-5">
+                        <h3 class='prize'>รางวัลเลขท้าย 3 ตัว</h3>
+                        <h3 id='prizelast3place'>247</h3>
+                    </div>
+                </div>
+                <div class="col-6 text-center my-5">
+                    <div class="col-12 text-center">
+                        <h3 class='prize'>รางวัลเลขท้าย 2 ตัว</h3>
+                        <h3 id='prizelast2place'>99</h3>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="btn btn-primary" style="padding: 10px 10px; font-size: 20px;" onclick="clickrandom()">RANDOM</button>
+            </div>
+            <script>
+                function clickrandom(){
+                    let firstprize = (Math.floor(Math.random() * 100000) + 1).toString().padStart(6, '0');
+                    let prizefirst3place = (Math.floor(Math.random() * 100) + 1).toString().padStart(3, '0');
+                    let prizelast3place = (Math.floor(Math.random() * 100) + 1).toString().padStart(3, '0');
+                    let prizelast2place = (Math.floor(Math.random() * 10) + 1).toString().padStart(2, '0');
+                    document.getElementById("firstprize").innerHTML = firstprize;
+                    document.getElementById("prizefirst3place").innerHTML = prizefirst3place;
+                    document.getElementById("prizelast3place").innerHTML = prizelast3place;
+                    document.getElementById("prizelast2place").innerHTML = prizelast2place;
+                }
+            </script>
+       </div>
+    </body>
+</html>
