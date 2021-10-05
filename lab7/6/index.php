@@ -61,7 +61,7 @@
             echo "<a href=\"$photo[$i]\">
         <img src=\"$photo[$i]\"</a><br>";
         }
-        ?>
+        ?>dddd
     </div>
 </body>
 
