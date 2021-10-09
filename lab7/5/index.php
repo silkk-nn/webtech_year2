@@ -51,7 +51,7 @@
         <?php
         for ($i = 1; $i < 13; $i++) {
             echo "<tr>";
-            echo "<th class=\"table-primary\">$i</th>";
+            echo "<td class=\"table-primary\">$i</td>";
             for ($j = 1; $j < 13; $j++) {
                 $result = $i * $j;
                 echo "<td>$result</td>";}
