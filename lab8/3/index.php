@@ -16,48 +16,41 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        h1 {
+        h2 {
             margin-top: 20px;
             margin-bottom: 20px;
         }
-        .cuttext {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 4; /* number of lines to show */
-            -webkit-box-orient: vertical;
-            }
-        .card-title{
-            color: crimson;
-            font-style: bold;
-        }
-        .reload {
-        font-family: Lucida Sans Unicode
+        .box {
+            background-color: #d6d6d6;
         }
     </style>
 
 <body>
-    <h1 class="text-center">Random Food For You</h1>
-    <div class="container d-flex justify-content-center">
-        <img src="">
+    <div class="container">
+        <h2>Box office</h2>
         <?php
-        $url = "https://www.themealdb.com/api/json/v1/1/random.php";
+        $url = "http://10.0.15.20/lab8/restapis/movies90";
         $response = file_get_contents($url);
         $result = json_decode($response);
-        $meal = $result->meals;
-        foreach ($meal as $case) {
-            echo "<div class=\"card p-4\" style=\"width: 30rem;\">
-            <img src=\"$case->strMealThumb\" class=\"card-img-top\">
-            <div class=\"card-body\">
-              <h5 class=\"card-title text-center mx-5\">$case->strMeal</h5>
-              <hr>
-              <p class=\"card-text cuttext\">$case->strInstructions</p>
-              <div class=\"row d-flex justify-content-center\">
-                    <button type=\"button\" class=\"btn btn-info\" onClick=\"history.go(0)\"><span class=\"reload\">&#x21bb;</span></button>
-                    <a href=\"$case->strSource\" class=\"btn btn-primary mx-3\">Learn more</a>
-              </div>
-            </div>
-          </div>";
+        $count = 1;
+        foreach ($result as $movie) {
+            echo "<div class=\"box p-3 my-3\">";
+            echo "<h4>$count. $movie->title ($movie->year)</h4>";
+            echo "<h5>Cast</h5>";
+            echo "<ul class=\"list-group list-group-flush m-3\">";
+            foreach ($movie->cast as $act){
+                echo "<li class=\"list-group-item\">$act</li>";
+            };
+            echo "</ul>";
+            echo "<h5>Genres</h5>";
+            $set_genre = "";
+            foreach ($movie->genres as $genre){
+                $set_genre = $set_genre ." ". $genre;
+            };
+            echo "<p> - $set_genre</p>";
+            echo "</div>";
+            // echo "<h2>$movie->genres</h2>";
+            $count ++;
         }
         ?>
 

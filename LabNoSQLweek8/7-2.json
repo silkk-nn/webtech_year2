@@ -1,0 +1,75 @@
+[
+    {
+        "Product": [
+            { "ProductID": "P001", "ProductName": "iPhone", "BrandName": "Apple", "Price": 45000 },
+            { "ProductID": "P002", "ProductName": "Surface Pro", "BrandName": "Microsoft", "Price": 38000 },
+            { "ProductID": "P003", "ProductName": "iPad", "BrandName": "Apple", "Price": 22000 },
+            { "ProductID": "P004", "ProductName": "Galaxy Tab", "BrandName": "Sumsung", "Price": 12000 }
+        ],
+        "Custormer": [
+            {
+                "CustID": "C40",
+                "CustName": "Aye Mi",
+                "Tel": "+6693-908-5236",
+                "CustAddress": {"HouseID": "70", "Road": "Rama II", "City": "Bangkok"}
+            },
+            {
+                "CustID": "C16",
+                "CustName": "Takashi",
+                "Tel": "+6677-101-3758",
+                "CustAddress": {"HouseID": "482", "Road": "Rama IV", "City": "Bangkok"}
+            },
+            {
+                "CustID": "C93",
+                "CustName": "Somchai",
+                "Tel": "+6694-994-3456",
+                "CustAddress": {"HouseID": "567", "Road": "Asia", "City": "Phuket"}
+            },
+            {
+                "CustID": "C56",
+                "CustName": "Thana",
+                "Tel": "+6677-434-9761",
+                "CustAddress": {"HouseID": "12", "Road": "Rama IX", "City": "Bangkok"}
+            }
+        ],
+        "Invoice": [
+            { 
+                "InvID": "V001",
+                "InvDate": {"day": 20, "month": 5, "year": 2562},
+                "CustomerID":"C40",
+                "Sales": [
+                    {"ProductID": "P001", "Quantity": 1},
+                    {"ProductID": "P003", "Quantity": 2}
+                ]
+            },
+            { 
+                "InvID": "V002",
+                "InvDate": {"day": 12, "month": 11, "year": 2562},
+                "CustomerID":"C16",
+                "Sales": [
+                    {"ProductID": "P002", "Quantity": 1}
+                ]
+            },
+            { 
+                "InvID": "V003",
+                "InvDate": {"day": 9, "month": 9, "year": 2560},
+                "CustomerID":"C93",
+                "Sales": [
+                    {"ProductID": "P001", "Quantity": 2},
+                    {"ProductID": "P002", "Quantity": 3},
+                    {"ProductID": "P003", "Quantity": 1},
+                    {"ProductID": "P004", "Quantity": 1}
+                ]
+            },
+            { 
+                "InvID": "V004",
+                "InvDate": {"day": 17, "month": 8, "year": 2561},
+                "CustomerID":"C56",
+                "Sales": [
+                    {"ProductID": "P002", "Quantity": 2},
+                    {"ProductID": "P004", "Quantity": 1}
+                ]
+            }
+        ]
+    }
+]

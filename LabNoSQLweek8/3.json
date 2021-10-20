@@ -1,0 +1,26 @@
+[
+    {
+        "CarID": "2276",
+        "Brand": "Benz",
+        "Model": "E220",
+        "Colors": ["White", "Yellow"]
+    },
+    {
+        "CarID": "8215",
+        "Brand": "Misubushi",
+        "Model": "Lacer",
+        "Colors": ["White", "Red"]
+    },
+    {
+        "CarID": "6639",
+        "Brand": "Honda",
+        "Model": "City",
+        "Colors": ["Black", "Gray", "White"]
+    },
+    {
+        "CarID": "4337",
+        "Brand": "Toyota",
+        "Model": "Civic",
+        "Colors": ["Yellow", "Gray"]
+    }
+]

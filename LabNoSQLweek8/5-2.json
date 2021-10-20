@@ -1,0 +1,30 @@
+[
+    {
+        "Oreder": [
+            {
+            "OrderID": "1006",
+            "OrderDate": {"day": 9, "month": 10, "year": 2560},
+            "Customer": { "CustID": 9, "CustName": "Jane", "CustAd": "Bangkok"},
+            "Product": [
+                {"ProductID": 7, "Quantity": 2},
+                {"ProductID": 8, "Quantity": 2},
+                {"ProductID": 3, "Quantity": 1}
+            ]
+        },
+        {
+            "OrderID": "1007",
+            "OrderDate": {"day": 15, "month": 1, "year": 2562},
+            "Customer": { "CustID": 22, "CustName": "Adam", "CustAd": "Phuket"},
+            "Product": [
+                {"ProductID": 5, "Quantity": 1},
+                {"ProductID": 3, "Quantity": 3}
+            ]
+        }],
+        "Product": [
+            {"ProductID": 3, "ProductName": "Book", "Price": 500},
+            {"ProductID": 5, "ProductName": "Lamp", "Price": 850},
+            {"ProductID": 7, "ProductName": "Table", "Price": 2200},
+            {"ProductID": 8, "ProductName": "Chair", "Price": 1200}
+        ]
+    }
+]

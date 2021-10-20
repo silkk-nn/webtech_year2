@@ -1,0 +1,90 @@
+[
+    {
+        "Invoice":[
+            {
+                "InvID": "V001",
+                "InvDate": {"day": 20, "month": 5, "year": 2562},
+                "Customer":{
+                    "CustID": "C40",
+                    "CustName": "Aye Mi",
+                    "Tel": "+6693-908-5236",
+                    "CustAddress": {"HouseID": "70", "Road": "Rama II", "City": "Bangkok"}
+                },
+                "Product": [
+                    {
+                        "ProductID": "P001", "ProductName": "iPhone", 
+                        "BrandName": "Apple", "Price": 45000, "Quantity": 1
+                    },
+                    {
+                        "ProductID": "P003", "ProductName": "iPad", 
+                        "BrandName": "Apple", "Price": 22000, "Quantity": 2
+                    }
+                ]
+            },
+            {
+                "InvID": "V002",
+                "InvDate": {"day": 12, "month": 11, "year": 2562},
+                "Customer":{
+                    "CustID": "C16",
+                    "CustName": "Takashi",
+                    "Tel": "+6677-101-3758",
+                    "CustAddress": {"HouseID": "482", "Road": "Rama IV", "City": "Bangkok"}
+                },
+                "Product": [
+                    {
+                        "ProductID": "P002", "ProductName": "Surface Pro", 
+                        "BrandName": "Microsoft", "Price": 38000, "Quantity": 1
+                    }
+                ]
+            },
+            {
+                "InvID": "V003",
+                "InvDate": {"day": 9, "month": 9, "year": 2560},
+                "Customer":{
+                    "CustID": "C93",
+                    "CustName": "Somchai",
+                    "Tel": "+6694-994-3456",
+                    "CustAddress": {"HouseID": "567", "Road": "Asia", "City": "Phuket"}
+                },
+                "Product": [
+                    {
+                        "ProductID": "P001", "ProductName": "iPhone", 
+                        "BrandName": "Apple", "Price": 45000, "Quantity": 2
+                    },
+                    {
+                        "ProductID": "P002", "ProductName": "Surface Pro", 
+                        "BrandName": "Microsoft", "Price": 38000, "Quantity": 3
+                    },
+                    {
+                        "ProductID": "P003", "ProductName": "iPad", 
+                        "BrandName": "Apple", "Price": 22000, "Quantity": 1
+                    },
+                    {
+                        "ProductID": "P004", "ProductName": "Galaxy Tab", 
+                        "BrandName": "Sumsung", "Price": 12000, "Quantity": 1
+                    }
+                ]
+            },
+            {
+                "InvID": "V004",
+                "InvDate": {"day": 17, "month": 8, "year": 2561},
+                "Customer":{
+                    "CustID": "C56",
+                    "CustName": "Thana",
+                    "Tel": "+6677-434-9761",
+                    "CustAddress": {"HouseID": "12", "Road": "Rama IX", "City": "Bangkok"}
+                },
+                "Product": [
+                    {
+                        "ProductID": "P002", "ProductName": "Surface Pro", 
+                        "BrandName": "Microsoft", "Price": 38000, "Quantity": 2
+                    },
+                    {
+                        "ProductID": "P004", "ProductName": "Galaxy Tab", 
+                        "BrandName": "Sumsung", "Price": 12000, "Quantity": 1
+                    }
+                ]
+            }
+        ]
+    }
+]

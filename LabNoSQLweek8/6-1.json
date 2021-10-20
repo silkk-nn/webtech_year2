@@ -1,0 +1,24 @@
+[
+    {
+        "ClientID": "C76",
+        "ClientName": "Noppadon",
+        "Property": [
+            { "PropNo": "104", "PropAds": "Being, China", "rent": 32000, 
+                "Owner": [{"OwnerNo": "C40","OwnerName": "Aye Mi"}]},
+            { "PropNo": "160", "PropAds": "Bangkok, Thailand", "rent": 22000, 
+                "Owner": [{"OwnerNo": "C93","OwnerName": "Somchai"}]}
+        ]
+    },
+    {
+        "ClientID": "C56",
+        "ClientName": "Thana",
+        "Property": [
+            { "PropNo": "160", "PropAds": "Osaka, Japan", "rent": 40000, 
+                "Owner": [{"OwnerNo": "C16","OwnerName": "Rakashi"}]},
+            { "PropNo": "128", "PropAds": "Bangkok, Thailand", "rent": 18000, 
+                "Owner": [{"OwnerNo": "93","OwnerName": "Somchai"}]},
+            { "PropNo": "335", "PropAds": "Phuket, Thailand", "rent": 23500, 
+                "Owner": [{"OwnerNo": "C93","OwnerName": "Somchai"}]}
+        ]
+    }
+]

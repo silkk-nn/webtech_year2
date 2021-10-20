@@ -1,31 +1,53 @@
 [
+    [ 
+    // 1.1
     {
-        "Student":[
-        {
         "StudentID": "S001",
         "Name": "Khim",
-        "Course": [{"C01":"A"}, ]
-        }, {
+        "Course": [
+            {"CourseID":"C01", "Grade":"A"},
+            {"CourseID":"C02", "Grade":"B"}
+        ]
+    },
+    {
         "StudentID": "S002",
         "Name": "Alex",
-        "CourseNo": ["C01", "C02", "C04"]
-        }, {
+        "Course": [
+            {"CourseID":"C01", "Grade":"A"},
+            {"CourseID":"C02", "Grade":"C"},
+            {"CourseID":"C04", "Grade":"C"}
+        ]
+    },
+    {
         "StudentID": "S002",
         "Name": "Tommy",
-        "CourseNo": ["C01"]
-        }]
-    }, {
         "Course": [
-            {
-                "CourseID": "C01",
-                "Grade": {"S001":"A", "S002":"A", "S003":"B"}
-            }, {
-                "CourseID": "C02",
-                "Grade": {"S001":"B", "S002":"C"}
-            }, {
-                "CourseID": "C04",
-                "Grade": {"S002":"C"}
-            }
+            {"CourseID":"C02", "Grade":"B"}
         ]
     }
+],
+[ //.1.2
+    {
+        "CourseNo": "C01",
+        "Student": [
+            {"StudentID": "S001", "Name":"Khim", "Grade":"A"},
+            {"StudentID": "S002", "Name":"Alex", "Grade":"A"},
+            {"StudentID": "S003", "Name":"Tommy", "Grade":"B"}
+        ]
+    },
+    {
+        "CourseNo": "C02",
+        "Student": [
+            {"StudentID": "S001", "Name":"Khim", "Grade":"B"},
+            {"StudentID": "S002", "Name":"Alex", "Grade":"C"}
+        ]
+        
+    },
+    {
+        "CourseNo": "C04",
+        "Student": [
+            {"StudentID": "S002", "Name":"Alex", "Grade":"C"}
+        ]
+    }
+    ]
 ]
